@@ -1,6 +1,6 @@
 import dashboardIcon from "../../assets/images/Squares four 1.png";
 import projectsIcon from "../../assets/images/Folder.png";
-import teamsIcon from "../../assets/images/Group.png";
+import teamsIcon from "../../assets/images/Groups.png";
 import analyticsIcon from "../../assets/images/Pie chart.png";
 import messagesIcon from "../../assets/images/Chat.png";
 import integrationsIcon from "../../assets/images/Code.png";

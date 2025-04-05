@@ -1,0 +1,20 @@
+{
+  "turnover": {
+    "current": 99405,
+    "previous": 87650,
+    "change": 5.39,
+    "period": "month"
+  },
+  "profit": {
+    "current": 32218,
+    "previous": 30560,
+    "change": 5.39,
+    "period": "month"
+  },
+  "customers": {
+    "current": 298,
+    "previous": 279,
+    "change": 6.84,
+    "period": "month"
+  }
+}

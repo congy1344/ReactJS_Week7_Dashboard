@@ -51,7 +51,12 @@ body {
 }
 
 .header-title {
-  margin-left: -200px;
+  position: absolute;
+  top: 20px;
+  left: 280px;
+  font-size: 24px;
+  font-weight: 500;
+  color: #ff3366;
 }
 
 .header-title h1 {
@@ -316,31 +321,50 @@ td {
   border-bottom: 1px solid #eee;
 }
 
-.customer-info {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
 .customer-avatar {
   width: 32px;
   height: 32px;
   border-radius: 50%;
+  margin-right: 12px;
+  object-fit: cover;
 }
 
-.status-new {
-  background: #eef2ff;
-  color: #6366f1;
-  padding: 0.25rem 0.75rem;
-  border-radius: 20px;
-  font-size: 0.8rem;
+.customer-info {
+  display: flex;
+  align-items: center;
 }
 
-.btn-edit {
+.status {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.status.new {
+  background-color: #e3f2fd;
+  color: #2196f3;
+}
+
+.status.in-progress {
+  background-color: #fff3e0;
+  color: #ff9800;
+}
+
+.status.completed {
+  background-color: #e8f5e9;
+  color: #4caf50;
+}
+
+.edit-btn {
   background: none;
   border: none;
+  color: #666;
   cursor: pointer;
-  opacity: 0.5;
+  padding: 4px;
+}
+
+.edit-btn:hover {
+  color: #ff3366;
 }
 
 .pagination {
@@ -582,4 +606,170 @@ td {
   .main-content {
     grid-column: 1;
   }
+}
+
+.detailed-report input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #ffffff;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.detailed-report input[type="checkbox"]:checked {
+  background-color: #ffffff;
+}
+
+.table-container input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #e0e0e0;
+  border-radius: 4px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: #ffffff;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.table-container input[type="checkbox"]:hover {
+  border-color: #ff3366;
+}
+
+.table-container input[type="checkbox"]:checked {
+  background-color: #ffffff;
+  border-color: #ff3366;
+}
+
+.table-container input[type="checkbox"]:checked::after {
+  content: "✓";
+  position: absolute;
+  color: #ff3366;
+  font-size: 14px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 24px;
+  color: #666;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.nav-item:hover {
+  background-color: rgba(255, 51, 102, 0.1);
+  color: #ff3366;
+}
+
+.nav-item.active {
+  background-color: #ff3366;
+  color: white;
+}
+
+.nav-icon {
+  margin-right: 12px;
+  font-size: 20px;
+}
+
+.customer-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-right: 12px;
+  object-fit: cover;
+}
+
+.customer-info {
+  display: flex;
+  align-items: center;
+}
+
+.version-info {
+  margin-top: auto;
+  padding: 24px;
+  text-align: center;
+}
+
+.try-now-btn {
+  background-color: transparent;
+  border: 2px solid #ff3366;
+  color: #ff3366;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.try-now-btn:hover {
+  background-color: #ff3366;
+  color: white;
+}
+
+.overview {
+  padding: 24px;
+}
+
+.section-title {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 24px;
+  color: #333;
+}
+
+.stats-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.stat-card {
+  padding: 24px;
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.stat-card.turnover {
+  background-color: #fff1f5;
+}
+
+.stat-card.profit {
+  background-color: #f0f7ff;
+}
+
+.stat-card.customers {
+  background-color: #f5f5f5;
+}
+
+.stat-card h3 {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 12px;
+}
+
+.stat-value {
+  font-size: 32px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.stat-change {
+  color: #4caf50;
+  font-size: 14px;
+}
+
+.detailed-report {
+  background-color: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }

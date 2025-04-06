@@ -268,11 +268,33 @@ body {
 }
 
 /* Detailed Report Section */
+.detailed-report-section {
+  margin-top: 2rem;
+}
+
 .detailed-report {
   background: white;
   border-radius: 12px;
   padding: 1.5rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.report-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.report-header h2 {
+  font-size: 1.2rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.report-actions {
+  display: flex;
+  gap: 0.75rem;
 }
 
 .header-buttons {
@@ -712,64 +734,173 @@ td {
   color: white;
 }
 
-.overview {
-  padding: 24px;
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
 }
 
-.section-title {
+.modal-content {
+  background-color: white;
+  padding: 24px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.modal-content h3 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #666;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: #ffffff;
+  transition: all 0.3s ease;
+  color: #000000;
+}
+
+.form-group input::placeholder {
+  color: #666666;
+}
+
+.form-group select option {
+  color: #000000;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #ff3366;
+  box-shadow: 0 0 0 3px rgba(255, 51, 102, 0.1);
+  color: #000000;
+}
+
+.form-group input:hover,
+.form-group select:hover {
+  border-color: #ff3366;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.modal-actions button {
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.modal-actions button:first-child {
+  background-color: transparent;
+  border: 1px solid #ddd;
+  color: #666;
+}
+
+.modal-actions button:last-child {
+  background-color: #ff3366;
+  border: none;
+  color: white;
+}
+
+.modal-actions button:hover {
+  opacity: 0.8;
+}
+
+.import-btn,
+.export-btn {
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  margin-left: 12px;
+}
+
+.import-btn {
+  background-color: #ff3366;
+  border: none;
+  color: white;
+}
+
+.export-btn {
+  background-color: transparent;
+  border: 1px solid #ff3366;
+  color: #ff3366;
+}
+
+.import-btn:hover,
+.export-btn:hover {
+  opacity: 0.8;
+}
+
+.view-report-link {
+  display: block;
+  text-decoration: none;
+  margin-top: 2rem;
+}
+
+.detailed-report-preview {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.detailed-report-preview:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.detailed-report-preview h3 {
+  color: #333;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.detailed-report-preview p {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.overview-title {
+  color: #ff3366;
   font-size: 24px;
   font-weight: 500;
-  margin-bottom: 24px;
-  color: #333;
 }
 
-.stats-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  margin-bottom: 48px;
-}
-
-.stat-card {
-  padding: 24px;
-  border-radius: 12px;
-  background-color: white;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
-
-.stat-card.turnover {
-  background-color: #fff1f5;
-}
-
-.stat-card.profit {
-  background-color: #f0f7ff;
-}
-
-.stat-card.customers {
-  background-color: #f5f5f5;
-}
-
-.stat-card h3 {
-  font-size: 16px;
-  color: #666;
-  margin-bottom: 12px;
-}
-
-.stat-value {
-  font-size: 32px;
-  font-weight: 600;
-  color: #333;
-  margin-bottom: 8px;
-}
-
-.stat-change {
-  color: #4caf50;
-  font-size: 14px;
-}
-
-.detailed-report {
-  background-color: white;
-  border-radius: 12px;
-  padding: 24px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+.stat-icon img {
+  width: 24px;
+  height: 24px;
 }

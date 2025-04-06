@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
 import DetailedReport from "./DetailedReport";
-import overviewIcon from "../../assets/images/Squares four 1.png";
 import cartIcon from "../../assets/images/Button 1509.png";
 import dollarIcon from "../../assets/images/Button 1529.png";
 import userIcon from "../../assets/images/Button 1530.png";
 
 const Overview = () => {
-  const [stats, setStats] = useState({
+  const [data, setData] = useState({
     turnover: null,
     profit: null,
     customers: null,
@@ -15,7 +14,7 @@ const Overview = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const fetchStats = async () => {
+    const fetchData = async () => {
       try {
         const [turnoverRes, profitRes, customersRes] = await Promise.all([
           fetch("http://localhost:3001/turnover"),
@@ -23,72 +22,81 @@ const Overview = () => {
           fetch("http://localhost:3001/customers"),
         ]);
 
-        const turnover = await turnoverRes.json();
-        const profit = await profitRes.json();
-        const customers = await customersRes.json();
+        const [turnover, profit, customers] = await Promise.all([
+          turnoverRes.json(),
+          profitRes.json(),
+          customersRes.json(),
+        ]);
 
-        setStats({
-          turnover,
-          profit,
-          customers,
-        });
+        setData({ turnover, profit, customers });
         setLoading(false);
       } catch (err) {
-        setError(err.message);
+        setError("Không thể tải dữ liệu");
         setLoading(false);
       }
     };
 
-    fetchStats();
+    fetchData();
   }, []);
 
   if (loading) return <div>Đang tải...</div>;
   if (error) return <div>Lỗi: {error}</div>;
 
-  const formatCurrency = (value) => {
-    return new Intl.NumberFormat("en-US", {
-      style: "currency",
-      currency: "USD",
-      minimumFractionDigits: 0,
-      maximumFractionDigits: 0,
-    }).format(value);
-  };
-
   return (
-    <div className="overview">
-      <h2 className="section-title">Overview</h2>
-
-      <div className="stats-container">
-        <div className="stat-card turnover">
-          <h3>Turnover</h3>
-          <div className="stat-value">
-            {formatCurrency(stats.turnover?.current)}
+    <div className="overview-section">
+      <div className="section-header">
+        <h2 className="overview-title">Overview</h2>
+      </div>
+      <div className="stats-grid">
+        <div className="stat-card pink">
+          <div className="stat-header">
+            <h3>Turnover</h3>
+            <div className="stat-icon">
+              <img src={cartIcon} alt="Turnover icon" />
+            </div>
           </div>
-          <div className="stat-change">
-            ↑ {stats.turnover?.change}% period of change
-          </div>
-        </div>
-
-        <div className="stat-card profit">
-          <h3>Profit</h3>
-          <div className="stat-value">
-            {formatCurrency(stats.profit?.current)}
-          </div>
-          <div className="stat-change">
-            ↑ {stats.profit?.change}% period of change
+          <div className="stat-content">
+            <h4>${data.turnover?.current.toLocaleString()}</h4>
+            <div className="stat-change positive">
+              <span>↑ {data.turnover?.change}% period of change</span>
+            </div>
           </div>
         </div>
 
-        <div className="stat-card customers">
-          <h3>New customer</h3>
-          <div className="stat-value">{stats.customers?.current}</div>
-          <div className="stat-change">
-            ↑ {stats.customers?.change}% period of change
+        <div className="stat-card blue">
+          <div className="stat-header">
+            <h3>Profit</h3>
+            <div className="stat-icon">
+              <img src={dollarIcon} alt="Profit icon" />
+            </div>
+          </div>
+          <div className="stat-content">
+            <h4>${data.profit?.current.toLocaleString()}</h4>
+            <div className="stat-change positive">
+              <span>↑ {data.profit?.change}% period of change</span>
+            </div>
+          </div>
+        </div>
+
+        <div className="stat-card light-blue">
+          <div className="stat-header">
+            <h3>New customer</h3>
+            <div className="stat-icon">
+              <img src={userIcon} alt="Customer icon" />
+            </div>
+          </div>
+          <div className="stat-content">
+            <h4>{data.customers?.current}</h4>
+            <div className="stat-change positive">
+              <span>↑ {data.customers?.change}% period of change</span>
+            </div>
           </div>
         </div>
       </div>
 
-      <DetailedReport />
+      <div className="detailed-report-section">
+        <DetailedReport />
+      </div>
     </div>
   );
 };

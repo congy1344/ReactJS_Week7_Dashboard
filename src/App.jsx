@@ -3,7 +3,6 @@ import "./App.css";
 import Header from "./components/layout/Header";
 import Sidebar from "./components/layout/Sidebar";
 import Overview from "./components/dashboard/Overview";
-import DetailedReport from "./components/dashboard/DetailedReport";
 import Projects from "./components/Projects";
 import Teams from "./components/Teams";
 import Analytics from "./components/Analytics";
@@ -25,7 +24,6 @@ function App() {
             <Route path="/analytics" element={<Analytics />} />
             <Route path="/messages" element={<Messages />} />
             <Route path="/integrations" element={<Integrations />} />
-            <Route path="/detailed-report" element={<DetailedReport />} />
           </Routes>
         </main>
       </div>

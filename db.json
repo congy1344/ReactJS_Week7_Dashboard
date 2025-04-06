@@ -19,7 +19,7 @@
   },
   "orders": [
     {
-      "id": 1,
+      "id": "1",
       "customerName": "Elizabeth Lee",
       "avatar": "../../assets/images/Avatar (2).png",
       "company": "AvatarSystems",
@@ -28,7 +28,7 @@
       "status": "New"
     },
     {
-      "id": 2,
+      "id": "2",
       "customerName": "Carlos Garcia",
       "avatar": "../../assets/images/Avatar (3).png",
       "company": "SnoozeShift",
@@ -37,7 +37,7 @@
       "status": "New"
     },
     {
-      "id": 3,
+      "id": "3",
       "customerName": "Elizabeth Bailey",
       "avatar": "../../assets/images/Avatar (4).png",
       "company": "Prime Time Telecom",
@@ -46,7 +46,7 @@
       "status": "In-progress"
     },
     {
-      "id": 4,
+      "id": "4",
       "customerName": "Ryan Brown",
       "avatar": "../../assets/images/Avatar (5).png",
       "company": "OmniTech Corporation",
@@ -55,7 +55,7 @@
       "status": "In-progress"
     },
     {
-      "id": 5,
+      "id": "5",
       "customerName": "Ryan Young",
       "avatar": "../../assets/images/Avatar (1).png",
       "company": "DataStream Inc.",
@@ -64,13 +64,22 @@
       "status": "Completed"
     },
     {
-      "id": 6,
+      "id": "6",
       "customerName": "Hailey Adams",
       "avatar": "../../assets/images/Avatar 313.png",
       "company": "FlowRush",
       "orderValue": "$922",
       "orderDate": "10/06/2023",
       "status": "Completed"
+    },
+    {
+      "id": 1743945947520,
+      "customerName": "YYY",
+      "company": "YYY",
+      "orderValue": "100",
+      "orderDate": "06/04/2025",
+      "status": "New",
+      "avatar": "../../assets/images/Avatar (1).png"
     }
   ]
 }

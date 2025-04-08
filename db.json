@@ -73,12 +73,21 @@
       "status": "Completed"
     },
     {
-      "id": 1743945947520,
+      "id": "1743945947520",
       "customerName": "YYY",
       "company": "YYY",
-      "orderValue": "100",
+      "orderValue": "$300",
       "orderDate": "06/04/2025",
       "status": "New",
+      "avatar": "../../assets/images/Avatar (1).png"
+    },
+    {
+      "id": "1743946828672",
+      "customerName": "fff",
+      "company": "fff",
+      "orderValue": "200",
+      "orderDate": "06/04/2025",
+      "status": "In-progress",
       "avatar": "../../assets/images/Avatar (1).png"
     }
   ]

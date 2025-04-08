@@ -55,12 +55,22 @@ const DetailedReport = () => {
   }, []);
 
   const handleEdit = (order) => {
-    setSelectedOrder(order);
+    // Tìm đường dẫn gốc của avatar
+    const originalAvatarPath = Object.keys(avatarMap).find(
+      (key) => avatarMap[key] === order.avatar
+    );
+
+    setSelectedOrder({
+      ...order,
+      avatar: originalAvatarPath,
+    });
     setShowEditModal(true);
   };
 
   const handleUpdate = async () => {
     try {
+      console.log("Dữ liệu gửi đi:", selectedOrder);
+
       const response = await fetch(
         `http://localhost:3001/orders/${selectedOrder.id}`,
         {
@@ -68,23 +78,25 @@ const DetailedReport = () => {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({
-            ...selectedOrder,
-            avatar: Object.keys(avatarMap).find(
-              (key) => avatarMap[key] === selectedOrder.avatar
-            ),
-          }),
+          body: JSON.stringify(selectedOrder),
         }
       );
 
       if (!response.ok) {
-        throw new Error("Cập nhật thất bại");
+        const errorData = await response.text();
+        console.error("Chi tiết lỗi từ server:", errorData);
+        throw new Error(`Cập nhật thất bại: ${errorData}`);
       }
 
+      const updatedData = await response.json();
+      console.log("Dữ liệu sau khi cập nhật:", updatedData);
+
+      await fetchOrders();
       setShowEditModal(false);
-      fetchOrders();
+      setSelectedOrder(null);
     } catch (err) {
-      console.error("Lỗi khi cập nhật:", err);
+      console.error("Chi tiết lỗi:", err);
+      alert(`Có lỗi xảy ra khi cập nhật dữ liệu: ${err.message}`);
     }
   };
 
@@ -317,7 +329,7 @@ const DetailedReport = () => {
         <button className="page-btn">2</button>
         <button className="page-btn">3</button>
         <button className="page-btn">4</button>
-        <span>...</span>
+        <span style={{ color: "grey" }}>. . .</span>
         <button className="page-btn">10</button>
         <button className="page-btn">11</button>
         <button className="next-btn">→</button>

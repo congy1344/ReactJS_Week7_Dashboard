@@ -2,7 +2,6 @@ import "./App.css";
 import Header from "./components/layout/Header";
 import Sidebar from "./components/layout/Sidebar";
 import Overview from "./components/dashboard/Overview";
-import DetailedReport from "./components/dashboard/DetailedReport";
 
 function App() {
   return (
@@ -11,7 +10,6 @@ function App() {
       <Sidebar />
       <main className="main-content">
         <Overview />
-        <DetailedReport />
       </main>
     </div>
   );

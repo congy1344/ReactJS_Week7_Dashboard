@@ -7,14 +7,19 @@ import DetailedReport from "./components/dashboard/DetailedReport";
 
 function App() {
   return (
-    <div className="app-container">
-      <Header />
-      <Sidebar />
-      <main className="main-content">
-        <Overview />
-        <DetailedReport />
-      </main>
-    </div>
+    <Router>
+      <div className="app-container">
+        <Header />
+        <Sidebar />
+        <main className="main-content">
+          <Routes>
+            <Route path="/" element={<Overview />} />
+            <Route path="/detailed-report" element={<DetailedReport />} />
+          </Routes>
+        </main>
+      </div>
+    </Router>
   );
 }
+
 export default App;

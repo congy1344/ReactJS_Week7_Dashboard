@@ -29,7 +29,7 @@ function App() {
           </div>
         </div>
         <div className="header-title">
-          <h1>Dashboard</h1>
+          <h1>Header</h1>
         </div>
         <div className="header-right">
           <div className="search-box">
@@ -83,18 +83,6 @@ function App() {
                 <span>Integrations</span>
               </a>
             </li>
-            {/* <li>
-              <a href="#">
-                <img src={settingsIcon} alt="" className="nav-icon" />
-                <span>Settings</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img src={logoutIcon} alt="" className="nav-icon" />
-                <span>Logout</span>
-              </a>
-            </li> */}
           </ul>
         </nav>
         <div className="sidebar-bottom">
@@ -116,7 +104,7 @@ function App() {
           </div>
           <div className="stats-grid">
             <div className="stat-card pink">
-              <div className="stat-header">
+              {/* <div className="stat-header">
                 <h3>Turnover</h3>
                 <div className="stat-icon">
                   <img src={cartIcon} alt="" />
@@ -125,10 +113,10 @@ function App() {
               <div className="stat-content">
                 <h4>$92,405</h4>
                 <p className="stat-change positive">↑ 5.39% period of change</p>
-              </div>
+              </div> */}
             </div>
             <div className="stat-card blue">
-              <div className="stat-header">
+              {/* <div className="stat-header">
                 <h3>Profit</h3>
                 <div className="stat-icon">
                   <img src={dollarIcon} alt="" />
@@ -137,10 +125,10 @@ function App() {
               <div className="stat-content">
                 <h4>$32,218</h4>
                 <p className="stat-change positive">↑ 5.39% period of change</p>
-              </div>
+              </div> */}
             </div>
             <div className="stat-card light-blue">
-              <div className="stat-header">
+              {/* <div className="stat-header">
                 <h3>New customer</h3>
                 <div className="stat-icon">
                   <img src={userIcon} alt="" />
@@ -149,13 +137,17 @@ function App() {
               <div className="stat-content">
                 <h4>298</h4>
                 <p className="stat-change positive">↑ 6.84% period of change</p>
-              </div>
+              </div> */}
             </div>
           </div>
         </section>
 
         <section className="detailed-report">
-          <div className="section-header">
+          <div className="header-title">
+            <h1>Table view</h1>
+          </div>
+
+          {/* <div className="section-header">
             <div className="section-title">
               <img src={reportIcon} alt="" className="section-icon" />
               <h2>Detailed report</h2>
@@ -168,8 +160,8 @@ function App() {
                 <span>Export</span>
               </button>
             </div>
-          </div>
-          <div className="table-container">
+          </div> */}
+          {/* <div className="table-container">
             <table>
               <thead>
                 <tr>
@@ -207,11 +199,10 @@ function App() {
                     <button className="btn-edit">✏️</button>
                   </td>
                 </tr>
-                {/* Add more rows similar to the first one */}
               </tbody>
             </table>
-          </div>
-          <div className="pagination">
+          </div> */}
+          {/* <div className="pagination">
             <span>63 results</span>
             <div className="pagination-controls">
               <button className="prev">←</button>
@@ -224,7 +215,7 @@ function App() {
               <button>11</button>
               <button className="next">→</button>
             </div>
-          </div>
+          </div> */}
         </section>
       </main>
 

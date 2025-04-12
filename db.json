@@ -71,6 +71,15 @@
       "orderValue": "$922",
       "orderDate": "10/06/2023",
       "status": "Completed"
+    },
+    {
+      "id": 1744467439767,
+      "customerName": "Huynh Cong Y",
+      "company": "IUH",
+      "orderValue": "$200",
+      "orderDate": "12/04/2025",
+      "status": "New",
+      "avatar": "../../assets/images/Avatar (1).png"
     }
   ]
 }
